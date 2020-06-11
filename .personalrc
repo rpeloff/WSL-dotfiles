@@ -1,0 +1,5 @@
+# Ryan Eloff
+
+# Python virtual environment wrapper
+VIRTUALENVWRAPPER_PYTHON=python3
+source ~/.local/bin/virtualenvwrapper.sh

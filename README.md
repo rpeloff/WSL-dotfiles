@@ -43,12 +43,30 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+See the documentation for more information and a guide to switching themes. By default I have selected the [Bullet Train theme](https://github.com/caiogondim/bullet-train.zsh).
+
+Install a Powerline font
+------------------------
+
+Powerline adds visual magic to your terminals. To make this work, you need to install a Powerline font that will work with WSL.
+
+I like working with the [Menlo patched font for Powerline](https://github.com/abertsch/Menlo-for-Powerline) which can be downloaded [here](https://github.com/abertsch/Menlo-for-Powerline/archive/master.zip). You can install any Powerline compatable font (for example, you might prefer [Ubuntu Mono for Powerline](https://github.com/powerline/fonts/tree/master/UbuntuMono)).
+
+Unzip the archive and install the extracted fonts (double click each of the `.ttf` files and select `"install"` on the top left of the *Windows Font Viewer*).
+
+In your favourite terminal (mine is the [Fluent Terminal](https://github.com/felixse/FluentTerminal)), locate the settings dialog and set the terminal font family to `"Menlo for Powerline"` or whichever Powerline font you choose to install.
+
 Install Yadm
 ------------
 
-[Yet Another Dotfiled Manager](https://yadm.io/) (Yadm) will manage our dotfiles:
+[Yet Another Dotfiled Manager](https://yadm.io/) (yadm) will manage our dotfiles:
 
 ```
 sudo apt install yadm
 ```
 
+Now install our dotfiles with yadm:
+
+```
+yadm clone https://github.com/rpeloff/WSL-dotfiles.git
+```
