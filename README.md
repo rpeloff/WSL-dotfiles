@@ -20,8 +20,17 @@ Add the generated public key to [GitHub](https://github.com/settings/ssh/new) an
 cat ~/.ssh/id_ed25519.pub
 ```
 
-Setup [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)
--------------
+Install Oh My Zsh
+-----------------
+
+In case you have not heard of it, read [this](https://github.com/ohmyzsh/ohmyzsh) 🙃
+
+> **Oh My Zsh will not make you a 10x developer...but you may feel like one.**
+>
+> Once installed, your terminal shell will become the talk of the town or your money back! With each keystroke in your command prompt, you'll take advantage of the hundreds of powerful plugins and beautiful themes. Strangers will come up to you in cafés and ask you, "that is amazing! are you some sort of genius?"
+>
+>Finally, you'll begin to get the sort of attention that you have always felt you deserved. ...or maybe you'll use the time that you're saving to start flossing more often. 😬
+> 
 
 First install [Zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH):
 
@@ -31,7 +40,7 @@ sudo apt upgrade
 sudo apt install zsh
 ```
 
-Install Oh My Zsh:
+Then install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh):
 
 **via curl**
 ```
@@ -63,9 +72,14 @@ I use [tmux](https://github.com/tmux/tmux/wiki) for managing terminal sessions. 
 
 ``` 
 sudo apt install tmux
-```
+```  
 
-If you do not use tmux, do not execute the yadm bootstrap (explained below).  
+Install pyenv (optional)
+-------------
+
+```
+sudo apt-get update; sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+```
 
 Install Yadm
 ------------
@@ -73,7 +87,8 @@ Install Yadm
 [Yet Another Dotfiles Manager](https://yadm.io/) (yadm) will manage our dotfiles:
 
 ```
-sudo apt install yadm
+git clone https://github.com/TheLocehiliosan/yadm.git ~/.yadm-project
+sudo ln -s ~/.yadm-project/yadm /usr/local/bin/yadm
 ```
 
 Now install our dotfiles with yadm:
@@ -83,3 +98,11 @@ yadm clone https://github.com/rpeloff/WSL-dotfiles.git
 ```
 
 You will be prompted to execute a bootstrap program. This is recommended if you use tmux.
+
+Skip the bootstrap program if you do not use any of the following:
+
+- tmux
+- pyenv
+- virtualenvwrapper (TODO)
+
+The bootstrap program can be executed at a later stage with `yadm bootstrap`.
