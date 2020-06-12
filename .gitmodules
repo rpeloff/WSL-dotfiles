@@ -4,3 +4,6 @@
 [submodule ".pyenv"]
 	path = .pyenv
 	url = https://github.com/pyenv/pyenv.git
+[submodule ".oh-my-zsh/custom/themes/powerlevel10k"]
+	path = .oh-my-zsh/custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git

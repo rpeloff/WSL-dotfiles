@@ -23,7 +23,7 @@ cat ~/.ssh/id_ed25519.pub
 Install Oh My Zsh
 -----------------
 
-In case you have not heard of it, read [this](https://github.com/ohmyzsh/ohmyzsh) 🙃
+In case you have not heard of [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh), read this ... 🙃
 
 > **Oh My Zsh will not make you a 10x developer...but you may feel like one.**
 >
@@ -52,21 +52,32 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-See the documentation for more information and a guide to switching themes. By default I have selected the [Bullet Train theme](https://github.com/caiogondim/bullet-train.zsh).
+I have selected and configured the [Powerlevel10k theme](https://github.com/romkatv/powerlevel10k) for Oh My Zsh. There are many other themes (such as the [Bullet Train theme](https://github.com/caiogondim/bullet-train.zsh)) and you can consult the Oh My Zsh documentation for more information on switching themes.
 
-Install a Powerline font
-------------------------
+Install a powerline compatible font
+-----------------------------------
 
-Powerline adds visual magic to your terminals. To make this work, you need to install a Powerline font that will work with WSL.
+Powerline adds visual magic to your terminals. To make this work, you need to install a powerline font and configure your WSL terminal to use this font.
 
-I like working with the [Menlo patched font for Powerline](https://github.com/abertsch/Menlo-for-Powerline) which can be downloaded [here](https://github.com/abertsch/Menlo-for-Powerline/archive/master.zip). You can install any Powerline compatible font (for example, you might prefer [Ubuntu Mono for Powerline](https://github.com/powerline/fonts/tree/master/UbuntuMono)).
+[Nerd fonts](https://www.nerdfonts.com/) work great with powerline. You can also install [powerline fonts](https://github.com/powerline/fonts), but these fonts are not maintained with as many glyphs and do not work as well with themes like Powerlevel10k.
 
-Unzip the archive and install the extracted fonts (double click each of the `.ttf` files and select `"install"` on the top left of the *Windows Font Viewer*).
+I like working with the **Meslo Nerd Font** ([see preview](https://www.programmingfonts.org/#meslo)), a customized version of Apple's Menlo. In particular, I use the [Meslo Nerd Font patched for Powerlevel10k](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k).
 
-In your favorite terminal (mine is the [Fluent Terminal](https://github.com/felixse/FluentTerminal)), locate the settings dialog and set the terminal font family to `"Menlo for Powerline"` or whichever Powerline font you choose to install.
+**Font installation**
+
+Download these four ttf files:
+
+- [MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+- [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+- [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+- [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
+
+Double click each of the `.ttf` files and select `"Install"` on the top left of the *Windows Font Viewer*. The `MesloLGS NF` will be available to all application on your system.
+
+In your favorite terminal (mine is the [Fluent Terminal](https://github.com/felixse/FluentTerminal)), locate the settings dialog and set the terminal font family to `MesloLGS NF` or whichever powerline compatible font you choose to install.
 
 Install tmux (optional)
-------------
+-----------------------
 
 I use [tmux](https://github.com/tmux/tmux/wiki) for managing terminal sessions. I also use a [.tmux configuration file](https://github.com/gpakosz/.tmux) to make my tmux pretty and fun to use. Install tmux:
 
@@ -97,12 +108,10 @@ Now install our dotfiles with yadm:
 yadm clone https://github.com/rpeloff/WSL-dotfiles.git
 ```
 
-You will be prompted to execute a bootstrap program. This is recommended if you use tmux.
+You will be prompted to execute a bootstrap program. This is recommended if you use any of the following:
 
-Skip the bootstrap program if you do not use any of the following:
-
+- Powerlevel10k theme for Oh My Zsh
 - tmux
 - pyenv
-- virtualenvwrapper (TODO)
 
 The bootstrap program can be executed at a later stage with `yadm bootstrap`.
