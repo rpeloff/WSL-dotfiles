@@ -8,16 +8,16 @@ Create SSH keys
 
 Generate [Ed25519 SSK keys](https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54) for authenticating secure services (e.g. GitHub, AWS DevOps, etc.):
 
-```
-ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "username@domain.com"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
+```Shell    
+$ ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "username@domain.com"
+$ eval "$(ssh-agent -s)"
+$ ssh-add ~/.ssh/id_ed25519
 ```
 
 Add the generated public key to [GitHub](https://github.com/settings/ssh/new) and other auth services:
 
-```
-cat ~/.ssh/id_ed25519.pub
+```Shell
+$ cat ~/.ssh/id_ed25519.pub
 ```
 
 Install Oh My Zsh
@@ -34,25 +34,27 @@ In case you have not heard of [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh), r
 
 First install [Zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH):
 
-``` 
-sudo apt update
-sudo apt upgrade
-sudo apt install zsh
+```Shell
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install zsh
 ```
 
 Then install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh):
 
 **via curl**
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```Shell
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 **via wget**
-```
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```Shell
+$ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-I have selected and configured the [Powerlevel10k theme](https://github.com/romkatv/powerlevel10k) for Oh My Zsh. There are many other themes (such as the [Bullet Train theme](https://github.com/caiogondim/bullet-train.zsh)) and you can consult the Oh My Zsh documentation for more information on switching themes.
+There are many themes available for Oh My Zsh. I have included the [Powerlevel10k theme](https://github.com/romkatv/powerlevel10k) with these dotfiles as well as configuration for this theme. You can re-configure the Powerlevel10k theme at the end of the dotfiles installation by deleting the `.p10k.zsh` dotfile and restarting your terminal.
+
+If you would like to use another theme, such as the [Bullet Train theme](https://github.com/caiogondim/bullet-train.zsh), consult the [Oh My Zsh documentation](https://github.com/ohmyzsh/ohmyzsh#themes) for guidance on selecting themes.
 
 Install a powerline compatible font
 -----------------------------------
@@ -79,33 +81,48 @@ In your favorite terminal (mine is the [Fluent Terminal](https://github.com/feli
 Install tmux (optional)
 -----------------------
 
-I use [tmux](https://github.com/tmux/tmux/wiki) for managing terminal sessions. I also use a [.tmux configuration file](https://github.com/gpakosz/.tmux) to make my tmux pretty and fun to use. Install tmux:
+I use [tmux](https://github.com/tmux/tmux/wiki) for managing terminal sessions. If you use tmux, install it now and start managing your sessions:
 
-``` 
-sudo apt install tmux
-```  
+```Shell
+$ sudo apt install tmux
+```
+
+I have included a [.tmux configuration file](https://github.com/gpakosz/.tmux) with the dotfiles to make tmux pretty and fun to use. 
 
 Install pyenv (optional)
 -------------
 
+[pyenv](https://github.com/pyenv/pyenv) is a simple and useful tool for Python version management. This allows you to develop, test, and run applications in multiple versions of Python. In particular, it helps you avoid using the Python provided with the system (looking at you `python3`). The reason for this is that Python is used by the Linux OS itself and so you might want to avoid breaking it.
+
+I have included pyenv with the dotfiles. If you plan to use it and install one or more Python versions, first install the Python build dependencies:
+
+```Shell
+$ sudo apt-get update
+$ sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 ```
-sudo apt-get update; sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+After the dotfiles installation, you can install multiple python versions with pyenv. For example, download and install Python 3.7.7:
+
+```Shell
+$ pyenv install 3.7.7
 ```
+
+See [here](https://github.com/pyenv/pyenv/blob/master/COMMANDS.md) for more information on how to use the pyenv commands.
 
 Install Yadm
 ------------
 
 [Yet Another Dotfiles Manager](https://yadm.io/) (yadm) will manage our dotfiles:
 
-```
-git clone https://github.com/TheLocehiliosan/yadm.git ~/.yadm-project
-sudo ln -s ~/.yadm-project/yadm /usr/local/bin/yadm
+```Shell
+$ git clone https://github.com/TheLocehiliosan/yadm.git ~/.yadm-project
+$ sudo ln -s ~/.yadm-project/yadm /usr/local/bin/yadm
 ```
 
 Now install our dotfiles with yadm:
 
-```
-yadm clone https://github.com/rpeloff/WSL-dotfiles.git
+```Shell
+$ yadm clone https://github.com/rpeloff/WSL-dotfiles.git
 ```
 
 You will be prompted to execute a bootstrap program. This is recommended if you use any of the following:
@@ -113,6 +130,7 @@ You will be prompted to execute a bootstrap program. This is recommended if you 
 - Powerlevel10k theme for Oh My Zsh
 - tmux
 - pyenv
+- TODO virtualenv
 
 The bootstrap program can be executed at a later stage with `yadm bootstrap`.
 
