@@ -115,3 +115,5 @@ You will be prompted to execute a bootstrap program. This is recommended if you 
 - pyenv
 
 The bootstrap program can be executed at a later stage with `yadm bootstrap`.
+
+Finally, restart your terminal for changes to take effect.
