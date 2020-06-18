@@ -11,8 +11,6 @@ My [dotfiles](https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory#Uni
 
 This guide will take you through my basic setup for software development and data science work (mostly in Python) on WSL. We start by setting up and installing a few useful tools, followed by the configuration of these tools by installing the dotfiles in this repository.
 
-----
-
 ## Table of Contents
 
 - [Create SSH keys](#Create-SSH-keys)
@@ -20,14 +18,12 @@ This guide will take you through my basic setup for software development and dat
     - [Powerlevel10k theme for Oh My Zsh](#Powerlevel10k-theme-for-Oh-My-Zsh)
 - [Install a powerline compatible font](#Install-a-powerline-compatible-font)
 - [Install tmux](#Install-tmux)
-    - [.tmux configuration](#.tmux-configuration)
+    - [.tmux configuration](#tmux-configuration)
 - [Install pyenv](#Install-pyenv)
     - [pyenv-virtualenv](#pyenv-virtualenv)
 - [Install Poetry](#Install-Poetry)
 - [Install Yadm and clone the dotfiles](#Install-Yadm-and-clone-the-dotfiles)
     - [Yadm bootstrap program: install additional tools](#Yadm-bootstrap-program:-install-additional-tools)
-
-----
 
 ## Create SSH keys
 
@@ -44,8 +40,6 @@ Add the generated public key to [GitHub](https://github.com/settings/ssh/new) an
 ```Shell
 $ cat ~/.ssh/id_ed25519.pub
 ```
-
-----
 
 ## Install Oh My Zsh
 
@@ -86,8 +80,6 @@ I have also included a configuration for this theme. You can re-configure the Po
 
 Consult the [Oh My Zsh documentation](https://github.com/ohmyzsh/ohmyzsh#themes) for guidance if you would like to select another theme (such as the [Bullet Train theme](https://github.com/caiogondim/bullet-train.zsh)).
 
-----
-
 ## Install a powerline compatible font
 
 Powerline adds visual magic to your terminals. To make this work, you need to install a powerline font and configure your WSL terminal to use this font.
@@ -109,8 +101,6 @@ Double click each of the `.ttf` files and select `"Install"` on the top left of 
 
 In your favorite terminal (mine is the [Fluent Terminal](https://github.com/felixse/FluentTerminal)), locate the settings dialog and set the terminal font family to `MesloLGS NF` or whichever powerline compatible font you choose to install.
 
-----
-
 ## Install tmux
 
 I use [tmux](https://github.com/tmux/tmux/wiki) for managing terminal sessions. If you use tmux, install it now and start managing your sessions the smart way:
@@ -122,8 +112,6 @@ $ sudo apt install tmux
 ### .tmux configuration
 
 I have included a [.tmux configuration file](https://github.com/gpakosz/.tmux) as a git submodule that can be installed along with the dotfiles (see the [Yadm bootstrap program](#Yadm-bootstrap-program:-install-additional-tools) for installation). This makes tmux fun and easier to use.
-
-----
 
 ## Install pyenv
 
@@ -150,8 +138,6 @@ I have also included [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualen
 
 This helps keep your Python installations clean and manage your project dependencies. **Isolate your development environments in virtualenvs!**
 
-----
-
 ## Install Poetry
 
 [Poetry](https://python-poetry.org/) is an elegant tool that make Python packaging and dependency management a breeze. Many are switching from pipenv to Poetry (for example, see this [Python dev environment](https://jacobian.org/2019/nov/11/python-environment-2020/)).
@@ -163,8 +149,6 @@ $ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-po
 ```
 
 Note: I have tried using the pipx installation and had trouble getting pyenv and Poetry to co-operate. The recommended installer works best for me.
-
-----
 
 ## Install Yadm and clone the dotfiles
 
@@ -188,7 +172,7 @@ $ yadm clone https://github.com/rpeloff/WSL-dotfiles.git
 You will be prompted to execute a yadm bootstrap program when cloning the dotfiles. This is recommended and will install the following tools/themes:
 
 - [Powerlevel10k theme for Oh My Zsh](#Powerlevel10k-theme-for-Oh-My-Zsh)
-- [.tmux configuration](#.tmux-configuration)
+- [.tmux configuration](#tmux-configuration)
 - [pyenv](#Install-pyenv)
 - [pyenv-virtualenv](#pyenv-virtualenv)
 
