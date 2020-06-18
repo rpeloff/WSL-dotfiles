@@ -9,3 +9,6 @@ yadm submodule update --recursive --init
 
 # Complete .tmux configuration setup
 ln -s -f .tmux/.tmux.conf
+
+# Complete pyenv-virtualenv setup
+ln -s -f $(pwd)/.pyenv-virtualenv .pyenv/plugins/pyenv-virtualenv
