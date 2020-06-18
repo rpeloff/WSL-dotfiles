@@ -2,13 +2,11 @@
 
 My [dotfiles](https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory#Unix_and_Unix-like_environments) and other setup things for [WSL 1.0](https://docs.microsoft.com/en-us/windows/wsl/) on a Windows machine.
 
-> #### dotfile
-> ----
+> **dotfile**\
 > *noun* \
 > plural noun: **dotfiles**
 > 
-> Dotfiles are plain text configuration files on Unix-y systems for things like our shell, `~/.zshrc`, our editor in `~/.vimrc`, and many others. They are called "dotfiles" as they typically are named with a leading `.` making them hidden files on your system, although this is not a strict requirement.
->
+> 1. Dotfiles are plain text configuration files on Unix-y systems for things like our shell, `~/.zshrc`, our editor in `~/.vimrc`, and many others. They are called "dotfiles" as they typically are named with a leading `.` making them hidden files on your system, although this is not a strict requirement.
 > [[source](https://thoughtbot.com/upcase/videos/intro-to-dotfiles#:~:text=Dotfiles%20are%20plain%20text%20configuration,although%20this%20is%20not%20a%20strict%20requirement.)]
 
 This guide will take you through my basic setup for software development and data science work (mostly in Python) on WSL. We start by setting up and installing a few useful tools, followed by the configuration of these tools by installing the dotfiles in this repository.
