@@ -23,7 +23,7 @@ This guide will take you through my basic setup for software development and dat
     - [pyenv-virtualenv](#pyenv-virtualenv)
 - [Install Poetry](#Install-Poetry)
 - [Install Yadm and clone the dotfiles](#Install-Yadm-and-clone-the-dotfiles)
-    - [Yadm bootstrap program: install additional tools](#Yadm-bootstrap-program:-install-additional-tools)
+    - [Yadm bootstrap program: install additional tools](#Yadm-bootstrap-program-install-additional-tools)
 
 ## Create SSH keys
 
@@ -74,7 +74,7 @@ $ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 ### Powerlevel10k theme for Oh My Zsh
 
-There are many themes available for Oh My Zsh. I have included the [Powerlevel10k theme](https://github.com/romkatv/powerlevel10k) as a git submodule that can be installed along with the dotfiles (see the [Yadm bootstrap program](#Yadm-bootstrap-program:-install-additional-tools) for installation). 
+There are many themes available for Oh My Zsh. I have included the [Powerlevel10k theme](https://github.com/romkatv/powerlevel10k) as a git submodule that can be installed along with the dotfiles (see the [Yadm bootstrap program](#Yadm-bootstrap-program-install-additional-tools) for installation). 
 
 I have also included a configuration for this theme. You can re-configure the Powerlevel10k theme at the end of the dotfiles installation by deleting the `.p10k.zsh` dotfile and restarting your terminal.
 
@@ -111,13 +111,13 @@ $ sudo apt install tmux
 
 ### .tmux configuration
 
-I have included a [.tmux configuration file](https://github.com/gpakosz/.tmux) as a git submodule that can be installed along with the dotfiles (see the [Yadm bootstrap program](#Yadm-bootstrap-program:-install-additional-tools) for installation). This makes tmux fun and easier to use.
+I have included a [.tmux configuration file](https://github.com/gpakosz/.tmux) as a git submodule that can be installed along with the dotfiles (see the [Yadm bootstrap program](#Yadm-bootstrap-program-install-additional-tools) for installation). This makes tmux fun and easier to use.
 
 ## Install pyenv
 
 [pyenv](https://github.com/pyenv/pyenv) is a simple and useful tool for Python version management. This allows you to develop, test, and run applications in multiple versions of Python. In particular, it helps you avoid using the Python provided with the system (looking at you `python3`). The reason for this is that Python is used by the Linux OS itself and so you might want to avoid breaking it.
 
-I have included pyenv as a git submodule that can be installed along with the dotfiles (see the [Yadm bootstrap program](#Yadm-bootstrap-program:-install-additional-tools) for installation). If you plan to use it and install one or more Python versions, first install the Python build dependencies:
+I have included pyenv as a git submodule that can be installed along with the dotfiles (see the [Yadm bootstrap program](#Yadm-bootstrap-program-install-additional-tools) for installation). If you plan to use it and install one or more Python versions, first install the Python build dependencies:
 
 ```Shell
 $ sudo apt-get update
@@ -134,7 +134,7 @@ See [here](https://github.com/pyenv/pyenv/blob/master/COMMANDS.md) for more info
 
 ### pyenv-virtualenv
 
-I have also included [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) as a git submodule that can be installed along with the dotfiles (see the [Yadm bootstrap program](#Yadm-bootstrap-program:-install-additional-tools) for installation). This is a plugin for pyenv, enabling features to conveniently manage [virtualenvs](https://virtualenv.pypa.io/en/latest/).
+I have also included [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) as a git submodule that can be installed along with the dotfiles (see the [Yadm bootstrap program](#Yadm-bootstrap-program-install-additional-tools) for installation). This is a plugin for pyenv, enabling features to conveniently manage [virtualenvs](https://virtualenv.pypa.io/en/latest/).
 
 This helps keep your Python installations clean and manage your project dependencies. **Isolate your development environments in virtualenvs!**
 
