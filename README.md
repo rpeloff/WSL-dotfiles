@@ -13,17 +13,22 @@ This guide will take you through my basic setup for software development and dat
 
 ## Table of Contents
 
-- [Create SSH keys](#Create-SSH-keys)
-- [Install Oh My Zsh](#Install-Oh-My-Zsh)
-    - [Powerlevel10k theme for Oh My Zsh](#Powerlevel10k-theme-for-Oh-My-Zsh)
-- [Install a powerline compatible font](#Install-a-powerline-compatible-font)
-- [Install tmux](#Install-tmux)
+- [dotfiles](#dotfiles)
+  - [Table of Contents](#table-of-contents)
+  - [Create SSH keys](#create-ssh-keys)
+  - [Install Oh My Zsh](#install-oh-my-zsh)
+      - [via curl](#via-curl)
+      - [via wget](#via-wget)
+    - [Powerlevel10k theme for Oh My Zsh](#powerlevel10k-theme-for-oh-my-zsh)
+  - [Install a powerline compatible font](#install-a-powerline-compatible-font)
+      - [Font installation](#font-installation)
+  - [Install tmux](#install-tmux)
     - [.tmux configuration](#tmux-configuration)
-- [Install pyenv](#Install-pyenv)
+  - [Install pyenv](#install-pyenv)
     - [pyenv-virtualenv](#pyenv-virtualenv)
-- [Install Poetry](#Install-Poetry)
-- [Install Yadm and clone the dotfiles](#Install-Yadm-and-clone-the-dotfiles)
-    - [Yadm bootstrap program: install additional tools](#Yadm-bootstrap-program-install-additional-tools)
+  - [Install Poetry](#install-poetry)
+  - [Install Yadm and clone the dotfiles](#install-yadm-and-clone-the-dotfiles)
+    - [Yadm bootstrap program: install additional tools](#yadm-bootstrap-program-install-additional-tools)
 
 ## Create SSH keys
 
@@ -72,6 +77,8 @@ $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/t
 $ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+Change your default shell to zsh when prompted.
+
 ### Powerlevel10k theme for Oh My Zsh
 
 There are many themes available for Oh My Zsh. I have included the [Powerlevel10k theme](https://github.com/romkatv/powerlevel10k) as a git submodule that can be installed along with the dotfiles (see the [Yadm bootstrap program](#Yadm-bootstrap-program-install-additional-tools) for installation). 
@@ -93,13 +100,13 @@ I like working with the **Meslo Nerd Font** ([see preview](https://www.programmi
 Download these four ttf files:
 
 - [MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
-- [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
-- [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+- [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
+- [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
 - [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
 
 Double click each of the `.ttf` files and select `"Install"` on the top left of the *Windows Font Viewer*. The `MesloLGS NF` will be available to all application on your system.
 
-In your favorite terminal (mine is the [Fluent Terminal](https://github.com/felixse/FluentTerminal)), locate the settings dialog and set the terminal font family to `MesloLGS NF` or whichever powerline compatible font you choose to install.
+In your favorite terminal (mine is the [Fluent Terminal](https://github.com/felixse/FluentTerminal), find it in the Microsoft Store), locate the settings dialog and set the terminal font family to `MesloLGS NF` or whichever powerline compatible font you choose to install.
 
 ## Install tmux
 
@@ -145,7 +152,7 @@ This helps keep your Python installations clean and manage your project dependen
 Install Poetry with the [recommended installer](https://python-poetry.org/docs/#osx-linux-bashonwindows-install-instructions):
 
 ```Shell
-$ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+$ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
 ```
 
 Note: I have tried using the pipx installation and had trouble getting pyenv and Poetry to co-operate. The recommended installer works best for me.
