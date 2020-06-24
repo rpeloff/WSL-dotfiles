@@ -157,6 +157,13 @@ $ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-po
 
 Note: I have tried using the pipx installation and had trouble getting pyenv and Poetry to co-operate. The recommended installer works best for me.
 
+Poetry supports completion scripts. Enable this for Oh My Zsh as follows:
+
+```Shell
+mkdir $ZSH_CUSTOM/plugins/poetry
+poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
+```
+
 ## Install Yadm and clone the dotfiles
 
 I use [yadm](https://yadm.io/) (Yet Another Dotfiles Manager) to manage my dotfiles. Yadm is based on git and greatly simplifies the process of storing dotfiles in a single repository, while making sure that they are installed into the right locations.
